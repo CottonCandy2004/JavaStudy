@@ -1,15 +1,14 @@
 package Homework1.Problem4;
 
+import java.time.Year;
 public class Lunaryear2 {
     public static void main(String[] args) {
-        int n = 1952;
-        while (n < 2050) {
-            if (n % 100 == 0 && n % 400 != 0) {
-                n += 4;
-                continue;
+        for(int year = 1950; year <= 2050; year++)
+        {
+            if(Year.isLeap(year))
+            {
+                System.out.printf("%d ", year);
             }
-            System.out.print(n + " ");
-            n += 4;
         }
     }
 }
