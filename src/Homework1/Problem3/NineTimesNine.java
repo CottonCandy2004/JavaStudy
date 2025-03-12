@@ -1,3 +1,8 @@
+/**
+ * @Author: CottonCandy2004
+ * @Discription: Prints a 9*9 multiplication table.
+ */
+
 package Homework1.Problem3;
 
 public class NineTimesNine {

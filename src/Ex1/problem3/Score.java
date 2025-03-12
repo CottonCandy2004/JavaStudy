@@ -1,12 +1,16 @@
 package Ex1.problem3;
 
-import java.util.Scanner;
-
+import javax.swing.JOptionPane;
 public class Score {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int score = scanner.nextInt();
-        scanner.close();
+        String input = JOptionPane.showInputDialog("Enter a score:");
+        int score;
+        try{
+            score = Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid score");
+            return;
+        }
         if (score < 0 || score > 100) {
             System.out.println("Invalid score");
             return;

@@ -1,13 +1,25 @@
-package Ex1.problem1;
+/**
+ * @Author: CottonCandy2004
+ * @Discription: Factorial.
+ */
+
+ package Ex1.problem1;
 
 import java.math.BigInteger;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class Factorial {
     public static void main(String[] args) throws Exception {
-        Scanner scanner= new Scanner(System.in);
-        int n = scanner.nextInt();
-        scanner.close();
+        int n;
+        try{
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            n = Integer.parseInt(reader.readLine());
+            reader.close();
+        } catch (Exception e) {
+            System.out.println("Invalid input");
+            return;
+        }
         System.out.println(factorial(n));
     }
 

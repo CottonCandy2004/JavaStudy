@@ -1,3 +1,8 @@
+/**
+ * @Author: CottonCandy2004
+ * @Discription: Hanio.
+ */
+
 package Class.Lesson3;
 
 import java.util.Scanner;

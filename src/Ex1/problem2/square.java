@@ -1,3 +1,8 @@
+/**
+ * @Author: CottonCandy2004
+ * @Discription: Prints a square.
+ */
+
 package Ex1.problem2;
 
 import java.util.Scanner;
@@ -5,7 +10,14 @@ import java.util.Scanner;
 public class square {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
+        int n;
+        try {
+            n = scanner.nextInt();
+        } catch (Exception e) {
+            System.out.println("Invalid input");
+            scanner.close();
+            return;
+        }
         scanner.close();
         int half = n;
         for (int i = 1; i <= n; i++) {
@@ -21,7 +33,7 @@ public class square {
             System.out.print(" ");
         }
         for (int j = 0; j < i; j++) {
-            System.out.print("* ");
+            System.out.print("\u002A ");
         }
         System.out.println();
     }

@@ -1,3 +1,8 @@
+/**
+ * @Author: CottonCandy2004
+ * @Discription: Prints the leap years between 1950 and 2050, resolve 1.
+ */
+
 package Homework1.Problem4;
 
 public class Lunaryear1 {

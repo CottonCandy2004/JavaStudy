@@ -1,3 +1,8 @@
+/**
+ * @Author: CottonCandy2004
+ * @Discription: Just a simple program.
+ */
+
 package Class.Lesson2;
 
 import java.io.*;
