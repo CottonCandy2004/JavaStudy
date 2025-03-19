@@ -3,7 +3,7 @@
  * @Discription: Factorial.
  */
 
- package Ex1.problem1;
+package Ex1.problem1;
 
 import java.math.BigInteger;
 import java.io.BufferedReader;

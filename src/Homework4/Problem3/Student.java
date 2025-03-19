@@ -1,5 +1,7 @@
 package Homework4.Problem3;
 
+import java.time.LocalDate;
+import java.time.Period;
 public class Student {
     private String sname;
     private String sbirthday;
@@ -27,5 +29,30 @@ public class Student {
         System.out.println("Name: " + this.sname);
         System.out.println("Birthday: " + this.sbirthday);
         System.out.println("Class: " + this.sclass);
+    }
+}
+
+class CollegeStudent extends Student {
+    CollegeStudent() {
+        super();
+    }
+    
+    CollegeStudent(String name, String birthday, int sclass) {
+        super(name, birthday, sclass);
+    }
+    
+    public void setbirthday(String sbirthday) {
+        if (sbirthday.matches("\\d{4}-\\d{2}-\\d{2}")) {
+            LocalDate birthDate = LocalDate.parse(sbirthday);
+            LocalDate now = LocalDate.now();
+            int age = Period.between(birthDate, now).getYears();
+            if (age >= 17 && age <= 30) {
+                super.setbirthday(sbirthday);
+            } else {
+                System.out.println("Age must be between 17 and 30 years");
+            }
+        } else {
+            System.out.println("Invalid birthday format. Use YYYY-MM-DD");
+        }
     }
 }

@@ -3,7 +3,7 @@
  * @Discription: Hanio.
  */
 
-package Class.Lesson3;
+package Homework3.Problem2;
 
 import java.util.Scanner;
 

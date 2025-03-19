@@ -1,3 +1,7 @@
+/**
+ * @Author: CottonCandy2004
+ * @Discription: Compare String
+ */
 package Homework2.Problem3;
 
 public class CompareString {

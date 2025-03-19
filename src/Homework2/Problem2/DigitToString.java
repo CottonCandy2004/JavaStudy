@@ -1,3 +1,7 @@
+/**
+ * @Author: CottonCandy2004
+ * @Discription: Digit to String
+ */
 package Homework2.Problem2;
 
 public class DigitToString {
