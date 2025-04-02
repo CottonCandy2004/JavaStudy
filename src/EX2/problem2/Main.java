@@ -1,3 +1,7 @@
+/**
+ * @Author: CottonCandy2004
+ * @Discription: Main of problem2
+ */
 package EX2.problem2;
 
 public class Main {
