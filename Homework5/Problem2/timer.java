@@ -19,9 +19,9 @@ public class timer {
         }
         String res = "";
         if (!ifsecond) {
-            res = String.format("%s %02d:%02d", if24h ? "" : (time.getHour() > 12 ? "PM" : "AM"), hour, time.getMinute());
+            res = String.format("%s%02d:%02d", if24h ? "" : (time.getHour() > 12 ? "PM " : "AM "), hour, time.getMinute());
         } else {
-            res = String.format("%s %02d:%02d:%02d", if24h ? "" : (time.getHour() > 12 ? "PM" : "AM"), hour, time.getMinute(), time.getSecond());
+            res = String.format("%s%02d:%02d:%02d", if24h ? "" : (time.getHour() > 12 ? "PM " : "AM "), hour, time.getMinute(), time.getSecond());
         }
         return res;
     }
