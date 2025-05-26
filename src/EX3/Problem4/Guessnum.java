@@ -20,7 +20,7 @@ public class Guessnum extends Application{
         generator();
         VBox vbox = new VBox();
         StackPane stackPane = new StackPane(vbox);
-        Scene scene = new Scene(stackPane, 400, 200);
+        Scene scene = new Scene(stackPane, 800, 400);
         Label title = new Label("Guess a number");
         Label tips = new Label("The number is between " + floor + " and " + ceil);
         TextField input = new TextField();
@@ -40,13 +40,17 @@ public class Guessnum extends Application{
             } catch (NumberFormatException ex) {
                 title.setText("Invalid input");
                 logger.warning("Invalid input: " + text);
-                input.setStyle("-fx-background-color: yellow; -fx-text-fill: black");
+                vbox.setStyle("-fx-background-color: yellow");
+                title.setStyle("-fx-text-fill: black; -fx-font-size: 30px");
+                tips.setStyle("-fx-text-fill: black; -fx-font-size: 30px");
                 return;
             }
             if (guess < floor || guess > ceil) {
                 title.setText("Invalid input");
                 logger.warning("Invalid input: " + text);
-                input.setStyle("-fx-background-color: yellow; -fx-text-fill: black");
+                vbox.setStyle("-fx-background-color: yellow");
+                title.setStyle("-fx-text-fill: black; -fx-font-size: 30px");
+                tips.setStyle("-fx-text-fill: black; -fx-font-size: 30px");
                 return;
             }
             int result = check(guess);
@@ -54,23 +58,31 @@ public class Guessnum extends Application{
                 logger.info("Correct!");
                 button.setDisable(true);
                 input.setDisable(true);
-                input.setStyle("-fx-background-color: green; -fx-text-fill: white");
+                vbox.setStyle("-fx-background-color: green");
+                title.setStyle("-fx-text-fill: white; -fx-font-size: 30px");
+                tips.setStyle("-fx-text-fill: white; -fx-font-size: 30px");
                 title.setText("Right, good!");
                 return;
             } else if (result == 1) {
                 title.setText("Too Large");
-                input.setStyle("-fx-background-color: red; -fx-text-fill: white");
+                vbox.setStyle("-fx-background-color: red");
+                title.setStyle("-fx-text-fill: white; -fx-font-size: 30px");
+                tips.setStyle("-fx-text-fill: white; -fx-font-size: 30px");
                 tips.setText("The number is between " + floor + " and " + (guess - 1));
             } else {
                 title.setText("Too Small");
-                input.setStyle("-fx-background-color: blue; -fx-text-fill: white");
+                vbox.setStyle("-fx-background-color: blue");
+                title.setStyle("-fx-text-fill: white; -fx-font-size: 30px");
+                tips.setStyle("-fx-text-fill: white; -fx-font-size: 30px");
                 tips.setText("The number is between " + (guess + 1) + " and " + ceil);
             }
         });
         Button reset = new Button("Reset");
         reset.setOnAction(e -> {
             logger.info("Reseting!");
-            input.setStyle("-fx-background-color: white; -fx-text-fill: black");
+            vbox.setStyle("-fx-background-color: white");
+            title.setStyle("-fx-text-fill: black; -fx-font-size: 30px");
+            tips.setStyle("-fx-text-fill: black; -fx-font-size: 30px");
             input.setDisable(false);
             button.setDisable(false);
             reset();
@@ -78,6 +90,11 @@ public class Guessnum extends Application{
             title.setText("Guess a number");
             input.clear();
         });
+        title.setStyle("-fx-font-size: 30px");
+        tips.setStyle("-fx-font-size: 30px");
+        button.setStyle("-fx-font-size: 30px");
+        reset.setStyle("-fx-font-size: 30px");
+        input.setStyle("-fx-font-size: 30px");
         vbox.setAlignment(javafx.geometry.Pos.CENTER);
         vbox.getChildren().addAll(title, input, button, reset, tips);
         Stage.setScene(scene);

@@ -53,23 +53,23 @@ public class ElevatorSimulation extends Application {
         Pane elevatorPane = new Pane();
         elevatorPane.setPrefSize(200, 300);
         
-        Rectangle floor2 = new Rectangle(0, 0, 150, 100);
+        Rectangle floor2 = new Rectangle(0, 25, 150, 100);
         floor2.setFill(Color.LIGHTGRAY);
         floor2.setStroke(Color.BLACK);
         
-        Rectangle floor1 = new Rectangle(0, 150, 150, 100);
+        Rectangle floor1 = new Rectangle(0, 125, 150, 100);
         floor1.setFill(Color.LIGHTGRAY);
         floor1.setStroke(Color.BLACK);
         
         Label label2F = new Label("2F");
         label2F.setLayoutX(10);
-        label2F.setLayoutY(10);
+        label2F.setLayoutY(35);
         
         Label label1F = new Label("1F");
         label1F.setLayoutX(10);
-        label1F.setLayoutY(160);
+        label1F.setLayoutY(135);
         
-        elevatorRect = new Rectangle(50, 170, 50, 60);
+        elevatorRect = new Rectangle(50, 165, 50, 60);
         elevatorRect.setFill(Color.BLUE);
         elevatorRect.setStroke(Color.BLACK);
         
@@ -106,7 +106,7 @@ public class ElevatorSimulation extends Application {
     
     private void animateElevatorMovement(boolean isMovingUp) {
         int targetFloor = isMovingUp ? 2 : 1;
-        double targetY = (targetFloor == 1) ? 170 : 20;
+        double targetY = (targetFloor == 1) ? 165 : 65;
         
         TranslateTransition transition = new TranslateTransition(Duration.seconds(1), elevatorRect);
         
@@ -121,7 +121,6 @@ public class ElevatorSimulation extends Application {
             elevatorRect.setTranslateY(0);
             isAnimating = false;
             
-            // 动画完成后更新电梯楼层
             if (isMovingUp) {
                 elevator.moveUp();
                 upButton.setDisable(true);
